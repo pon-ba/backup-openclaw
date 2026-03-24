@@ -144,7 +144,7 @@ function renderFilterChips(
       ${
         (selectedDays.length > 0 || selectedHours.length > 0) && selectedSessions.length > 0
           ? html`
-            <button class="btn btn-sm filter-clear-btn" @click=${onClearFilters}>
+            <button class="btn btn--sm filter-clear-btn" @click=${onClearFilters}>
               ${t("usage.filters.clearAll")}
             </button>
           `
@@ -184,13 +184,13 @@ function renderDailyChartCompact(
       <div class="daily-chart-header">
         <div class="chart-toggle small sessions-toggle">
           <button
-            class="toggle-btn ${dailyChartMode === "total" ? "active" : ""}"
+            class="btn btn--sm toggle-btn ${dailyChartMode === "total" ? "active" : ""}"
             @click=${() => onDailyChartModeChange("total")}
           >
             ${t("usage.daily.total")}
           </button>
           <button
-            class="toggle-btn ${dailyChartMode === "by-type" ? "active" : ""}"
+            class="btn btn--sm toggle-btn ${dailyChartMode === "by-type" ? "active" : ""}"
             @click=${() => onDailyChartModeChange("by-type")}
           >
             ${t("usage.daily.byType")}
@@ -763,7 +763,7 @@ function renderSessionsCard(
         </div>
         <div class="session-bar-actions">
           <button
-            class="session-copy-btn"
+            class="btn btn--sm btn--ghost"
             title=${t("usage.sessions.copyName")}
             @click=${(e: MouseEvent) => {
               e.stopPropagation();
@@ -808,13 +808,13 @@ function renderSessionsCard(
         </div>
         <div class="chart-toggle small">
           <button
-            class="toggle-btn ${sessionsTab === "all" ? "active" : ""}"
+            class="btn btn--sm toggle-btn ${sessionsTab === "all" ? "active" : ""}"
             @click=${() => onSessionsTabChange("all")}
           >
             ${t("usage.sessions.all")}
           </button>
           <button
-            class="toggle-btn ${sessionsTab === "recent" ? "active" : ""}"
+            class="btn btn--sm toggle-btn ${sessionsTab === "recent" ? "active" : ""}"
             @click=${() => onSessionsTabChange("recent")}
           >
             ${t("usage.sessions.recent")}
@@ -833,7 +833,7 @@ function renderSessionsCard(
           </select>
         </label>
         <button
-          class="btn btn-sm sessions-action-btn icon"
+          class="btn btn--sm"
           @click=${() => onSessionSortDirChange(sessionSortDir === "desc" ? "asc" : "desc")}
           title=${
             sessionSortDir === "desc"
@@ -846,7 +846,7 @@ function renderSessionsCard(
         ${
           selectedCount > 0
             ? html`
-                <button class="btn btn-sm sessions-action-btn sessions-clear-btn" @click=${onClearSessions}>
+                <button class="btn btn--sm" @click=${onClearSessions}>
                   ${t("usage.sessions.clearSelection")}
                 </button>
               `

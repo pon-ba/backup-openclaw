@@ -284,7 +284,7 @@ function renderSessionDetailPanel(
           }
         </div>
         <button
-          class="session-close-btn"
+          class="btn btn--sm btn--ghost"
           @click=${onClose}
           title=${t("usage.details.close")}
         >
@@ -473,7 +473,7 @@ function renderTimeSeriesCompact(
             hasSelection
               ? html`
             <div class="chart-toggle small">
-              <button class="toggle-btn active" @click=${() => onCursorRangeChange?.(null, null)}>
+              <button class="btn btn--sm toggle-btn active" @click=${() => onCursorRangeChange?.(null, null)}>
                 ${t("usage.details.reset")}
               </button>
             </div>
@@ -482,13 +482,13 @@ function renderTimeSeriesCompact(
           }
           <div class="chart-toggle small">
             <button
-              class="toggle-btn ${!isCumulative ? "active" : ""}"
+              class="btn btn--sm toggle-btn ${!isCumulative ? "active" : ""}"
               @click=${() => onModeChange("per-turn")}
             >
               ${t("usage.details.perTurn")}
             </button>
             <button
-              class="toggle-btn ${isCumulative ? "active" : ""}"
+              class="btn btn--sm toggle-btn ${isCumulative ? "active" : ""}"
               @click=${() => onModeChange("cumulative")}
             >
               ${t("usage.details.cumulative")}
@@ -499,13 +499,13 @@ function renderTimeSeriesCompact(
               ? html`
                   <div class="chart-toggle small">
                     <button
-                      class="toggle-btn ${breakdownMode === "total" ? "active" : ""}"
+                      class="btn btn--sm toggle-btn ${breakdownMode === "total" ? "active" : ""}"
                       @click=${() => onBreakdownChange("total")}
                     >
                       ${t("usage.daily.total")}
                     </button>
                     <button
-                      class="toggle-btn ${breakdownMode === "by-type" ? "active" : ""}"
+                      class="btn btn--sm toggle-btn ${breakdownMode === "by-type" ? "active" : ""}"
                       @click=${() => onBreakdownChange("by-type")}
                     >
                       ${t("usage.daily.byType")}
@@ -793,7 +793,7 @@ function renderContextPanel(
         <div class="card-title usage-section-title">${t("usage.details.systemPromptBreakdown")}</div>
         ${
           hasMore
-            ? html`<button class="context-expand-btn" @click=${onToggleExpanded}>
+            ? html`<button class="btn btn--sm" @click=${onToggleExpanded}>
                 ${showAll ? t("usage.details.collapse") : t("usage.details.expandAll")}
               </button>`
             : nothing
@@ -1018,7 +1018,7 @@ function renderSessionLogsCompact(
             (${displayedCount} ${t("usage.overview.messages").toLowerCase()})
           </span>
         </span>
-        <button class="btn btn-sm usage-action-btn usage-secondary-btn" @click=${onToggleExpandedAll}>
+        <button class="btn btn--sm" @click=${onToggleExpandedAll}>
           ${expandedAll ? t("usage.details.collapseAll") : t("usage.details.expandAll")}
         </button>
       </div>
@@ -1068,7 +1068,7 @@ function renderSessionLogsCompact(
           .value=${filters.query}
           @input=${(event: Event) => onFilterQueryChange((event.target as HTMLInputElement).value)}
         />
-        <button class="btn btn-sm usage-action-btn usage-secondary-btn" @click=${onFilterClear}>
+        <button class="btn btn--sm" @click=${onFilterClear}>
           ${t("usage.filters.clear")}
         </button>
       </div>

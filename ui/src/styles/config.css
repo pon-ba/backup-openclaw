@@ -261,7 +261,13 @@
   gap: 6px;
   min-width: 0;
   flex: 1 1 auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.config-top-tabs__scroller::-webkit-scrollbar {
+  display: none;
 }
 
 .config-top-tabs__tab {
@@ -296,13 +302,6 @@
   color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 30%, transparent);
   background: var(--accent-subtle);
-}
-
-.config-top-tabs__right {
-  display: flex;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  min-width: 0;
 }
 
 /* Diff Panel */
@@ -1751,18 +1750,10 @@
   }
 
   .config-top-tabs__scroller {
-    flex: 1 1 100%;
+    flex: 1 1 auto;
   }
 
-  .config-top-tabs__right {
-    flex: 1 1 100%;
-  }
-
-  .config-top-tabs__right .config-mode-toggle {
-    width: 100%;
-  }
-
-  .config-top-tabs__right .config-mode-toggle__btn {
+  .config-actions__left .config-mode-toggle__btn {
     flex: 1 1 50%;
   }
 
